@@ -1,0 +1,17 @@
+strategy_weights:
+  default: 
+    A: 0.5
+    hybrid: 0.3
+    B: 0.2
+
+position_sizing:
+  A:
+    base: 0.02
+    max: 0.05
+  hybrid:
+    base: 0.015
+    max: 0.03
+  B:
+    base: 0.008
+    max: 0.015
+
