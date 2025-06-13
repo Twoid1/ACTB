@@ -1,0 +1,7 @@
+exchanges:
+binance:
+api_key: ${BINANCE_API_KEY}
+secret: ${BINANCE_API_SECRET}
+paper_trading: true
+
+# Same as production but with paper trading enabled

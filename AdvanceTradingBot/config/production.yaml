@@ -1,0 +1,23 @@
+exchanges:
+binance:
+api_key: ${BINANCE_API_KEY}
+secret: ${BINANCE_API_SECRET}
+paper_trading: false
+
+risk_parameters:
+max_drawdown: 0.25
+daily_loss_limit: 0.05
+risk_per_trade: 0.01
+min_position_size: 10
+position_limits:
+per_asset: 0.1
+per_sector: 0.3
+
+symbols:
+- BTCUSDT
+- ETHUSDT
+- SOLUSDT
+- ADAUSDT
+- MATICUSDT
+
+initial_capital: 20000
