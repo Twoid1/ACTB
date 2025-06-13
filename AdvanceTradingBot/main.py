@@ -1,10 +1,12 @@
 import asyncio
 import yaml
 import logging
+import HybridIntegration
 from src.data_processing.market_data_stream import MarketDataStreamer
 from src.strategy.strategy_engine import StrategyEngine
 from src.risk_management.risk_manager import RiskManager
 from src.execution.order_executor import OrderExecutor
+from src.hybrid.integration_engine
 from binance.client import Client
 
 # Configure logging
@@ -35,6 +37,9 @@ streamer = MarketDataStreamer(config['symbols'])
 strategy = StrategyEngine(config)
 risk_manager = RiskManager(config['initial_capital'], config['risk_parameters'])
 executor = OrderExecutor(exchange_api)
+hybrid_engine = HybridIntegration(capital=20000)
+
+asyncio.run(hybrid_engine.run())
 
 # Connect to market data
 await streamer.connect()

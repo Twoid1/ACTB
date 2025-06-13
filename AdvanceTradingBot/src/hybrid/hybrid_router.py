@@ -1,9 +1,12 @@
 class HybridRouter:
-def __init__(self, threshold_a=0.78, threshold_b=0.42):
+def __init__(self, threshold_a=0.8, threshold_b=0.4):
 self.threshold_a = threshold_a
 self.threshold_b = threshold_b
 
 def route_signal(self, opportunity):
+"""
+Determine optimal execution strategy for each opportunity
+"""
 # Core system A for high-confidence, fundamental plays
 if (opportunity['fundamental_score'] > self.threshold_a and
 opportunity['asset_class'] in ['large_cap', 'medium_cap']):
@@ -38,13 +41,4 @@ return {
 'stop_loss': '0.6%'
 }
 
-return None
-
-def update_thresholds(self, performance_data):
-# Adaptive threshold adjustment
-if performance_data['win_rate'] > 0.68:
-self.threshold_a *= 0.98
-self.threshold_b *= 0.97
-elif performance_data['win_rate'] < 0.60:
-self.threshold_a *= 1.02
-self.threshold_b *= 1.03
+return None # No trade

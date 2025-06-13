@@ -34,6 +34,3 @@ size = base_size * volatility_factor
 
 # Apply caps
 return min(size, self.total_capital * config['max'])
-
-def update_weights(self, new_weights):
-self.system_allocation = new_weights
